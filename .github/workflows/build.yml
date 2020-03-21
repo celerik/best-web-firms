@@ -1,0 +1,40 @@
+name: build
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    if: false == contains(github.event.head_commit.message, '[release]')
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Setup node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+
+    - name: Npm install
+      run: npm install
+
+    - name: Build css
+      run: npm run build-css
+      
+    - name: Run javascript linter
+      run: npm run lintj
+
+    - name: Run css linter
+      run: npm run lints      
+      
+    - name: Run unit test
+      run: npm run test      
+      
+    - name: Publish coverage report to coveralls.io
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: ./source/coverage/lcov.info
