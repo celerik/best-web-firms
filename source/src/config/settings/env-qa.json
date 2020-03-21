@@ -1,0 +1,8 @@
+{
+  "environment": {
+    "name": "qa"
+  },
+  "services": {
+    "root": "https://svc-bestwebfirms-qa.celerik.com"
+  }
+}
