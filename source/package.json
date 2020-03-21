@@ -36,7 +36,7 @@
     "@progress/kendo-react-grid": "2.11.0",
     "@progress/kendo-react-inputs": "2.11.0",
     "@progress/kendo-react-intl": "2.11.0",
-    "axios": "0.18.0",
+    "axios": "0.19.2",
     "axios-mock-adapter": "1.16.0",
     "classnames": "2.2.6",
     "deepmerge": "3.2.0",
