@@ -17,23 +17,25 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    
-    - name: Set working directory
-      run: cd source
 
     - name: Npm install
+      working-directory: ./source
       run: npm install
 
     - name: Build css
+      working-directory: ./source
       run: npm run build-css
       
     - name: Run javascript linter
+      working-directory: ./source
       run: npm run lintj
 
     - name: Run css linter
+      working-directory: ./source
       run: npm run lints      
       
     - name: Run unit test
+      working-directory: ./source
       run: npm run test      
       
     - name: Publish coverage report to coveralls.io
