@@ -1,7 +1,13 @@
+<div align="center" markdown="1">
+
+<img src="https://www.bestwebfirms.com/img/badges/best-web-firms.png" alt="Bet Web Firms" width="112">
+
 # Best Web Firms
 
 ![build](https://github.com/celerik/best-web-firms/workflows/build/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/celerik/best-web-firms/badge.svg?branch=master)](https://coveralls.io/github/celerik/best-web-firms?branch=master)
+
+</div>
 
 ## What's it
 
