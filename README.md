@@ -4,8 +4,8 @@
 
 # Best Web Firms
 
-![build](https://github.com/celerik/best-web-firms/workflows/build/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/celerik/best-web-firms/badge.svg?branch=master)](https://coveralls.io/github/celerik/best-web-firms?branch=master)
+![build](https://github.com/celerik/best-web-firms-react/workflows/build/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/celerik/best-web-firms-react/badge.svg?branch=master)](https://coveralls.io/github/celerik/best-web-firms-react?branch=master)
 
 </div>
 
@@ -41,7 +41,7 @@ The code is organized following an intuitive architecture and follows some of th
 
 ### 3. Clone Repository
 ```shell
-git clone https://github.com/celerik/best-web-firms.git
+git clone https://github.com/celerik/best-web-firms-react.git
 ```
 
 ### 4. Install Visual Studio Code & Extensions
@@ -67,7 +67,7 @@ Extensions:
  
 ## What's next
 
-Check out the road map of *best-web-firms* [here](ROADMAP.md).
+Check out the road map of *best-web-firms-react* [here](ROADMAP.md).
 
 ## License
 
