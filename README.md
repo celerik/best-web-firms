@@ -5,6 +5,7 @@
 # Best Web Firms
 
 ![build](https://github.com/celerik/best-web-firms-react/workflows/build/badge.svg)
+![documentation](https://github.com/celerik/best-web-firms-react/workflows/documentation/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/celerik/best-web-firms-react/badge.svg?branch=master)](https://coveralls.io/github/celerik/best-web-firms-react?branch=master)
 
 </div>
@@ -65,6 +66,11 @@ Extensions:
  5. Run unit tests: `npm run test`
  6. Generate documentation: `npm run doc`
  7. Start project: `npm start`
+ 
+ 
+## Documentation
+
+ - Check out Component's documentation [here](https://github.com/celerik/best-web-firms-react/blob/gh-pages/README.md).
  
 ## What's next
 
