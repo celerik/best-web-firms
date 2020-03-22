@@ -63,7 +63,8 @@ Extensions:
  3. Run JavaScript linter: `npm run lintj`
  4. Run CSS linter: `npm run lints`
  5. Run unit tests: `npm run test`
- 6. Start project: `npm start`
+ 6. Generate documentation: `npm run doc`
+ 7. Start project: `npm start`
  
 ## What's next
 
