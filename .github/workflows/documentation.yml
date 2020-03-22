@@ -1,0 +1,33 @@
+name: documentation
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  documentation:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Setup node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+        
+    - name: npm install
+      working-directory: ./source
+      run: npm install
+        
+    - name: Generate documentation
+      working-directory: ./source
+      run: npm run doc
+
+    - name: Publish documentation to github pages
+      uses: maxheld83/ghpages@master
+      env:
+        BUILD_DIR: source
+        GH_PAT: ${{ secrets.GH_PAT }}
