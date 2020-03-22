@@ -1,0 +1,29 @@
+name: deploy
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy dev image to github registry
+      uses: HurricanKai/Publish-Docker-Github-Action@master
+      with:
+        name: dev/best-web-firms-react
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        registry: docker.pkg.github.com
+        dockerfile: source/dev.Dockerfile
+        
+    - name: Deploy prd image to github registry
+      uses: HurricanKai/Publish-Docker-Github-Action@master
+      with:
+        name: dev/best-web-firms-react
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        registry: docker.pkg.github.com
+        dockerfile: source/prd.Dockerfile
