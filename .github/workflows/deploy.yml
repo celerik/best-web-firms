@@ -1,0 +1,57 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy_dev:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Github docker login
+      run: docker login docker.pkg.github.com -u equisoide -p ${{ secrets.GITHUB_TOKEN }}
+      
+    - name: Build dev image
+      working-directory: ./source
+      run: docker build -t docker.pkg.github.com/celerik/best-web-firms-react/bwfr:latest . -f dev.Dockerfile
+      
+    - name: Publish dev image
+      working-directory: ./source
+      run: docker push docker.pkg.github.com/celerik/best-web-firms-react/bwfr:latest
+      
+    - name: Deploy dev image to azure site via webhooks
+      uses: joelwmale/webhook-action@master
+      env:
+        WEBHOOK_URL: ${{ secrets.AZURE_DEPLOY_WEBHOOK_DEV_URL }}
+        data: "Deploying from github actions!"
+    
+  deploy_prd:
+    if: true == contains(github.event.head_commit.message, '[release]')
+    needs: deploy_dev
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Github docker login
+      run: docker login docker.pkg.github.com -u equisoide -p ${{ secrets.GITHUB_TOKEN }}
+      
+    - name: Build prd image
+      working-directory: ./source
+      run: docker build -t docker.pkg.github.com/celerik/best-web-firms-react/bwfr-prd:latest . -f prd.Dockerfile
+      
+    - name: Publish prd image
+      working-directory: ./source
+      run: docker push docker.pkg.github.com/celerik/best-web-firms-react/bwfr-prd:latest
+      
+    - name: Deploy [rd image to azure site via webhooks
+      uses: joelwmale/webhook-action@master
+      env:
+        WEBHOOK_URL: ${{ secrets.AZURE_DEPLOY_WEBHOOK_PRD_URL }}
+        data: "Deploying from github actions!"

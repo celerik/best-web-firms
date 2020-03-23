@@ -102,7 +102,7 @@ class LoginPage extends PureComponent {
                 <CtrlHeader
                     className={classes.header}
                     id="login-page-header"
-                    leftContent={config.text.appName}
+                    leftContent={config.settings.appName}
                 />
                 <CtrlLoginForm
                     id="login-page-form"

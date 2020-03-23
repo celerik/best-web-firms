@@ -56,7 +56,7 @@ const MasterPageContainer = ({
 
     return (
         <MasterPage
-            appName={config.text.appName}
+            appName={config.settings.appName}
             currentUrl={currentUrl}
             loadingPageProps={{
                 isVisible: loadingPageIsVisible,
