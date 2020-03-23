@@ -25,6 +25,7 @@ jobs:
       uses: joelwmale/webhook-action@master
       env:
         WEBHOOK_URL: ${{ secrets.AZURE_DEPLOY_WEBHOOK_DEV_URL }}
+        data: "Deploying from github actions!"
     
   deploy_prd:
     if: true == contains(github.event.head_commit.message, '[release]')
@@ -50,3 +51,4 @@ jobs:
       uses: joelwmale/webhook-action@master
       env:
         WEBHOOK_URL: ${{ secrets.AZURE_DEPLOY_WEBHOOK_PRD_URL }}
+        data: "Deploying from github actions!"
