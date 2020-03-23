@@ -10,7 +10,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
       
-    - name: Authenticate
+    - name: Github docker login
       run: docker login docker.pkg.github.com -u equisoide -p ${{ secrets.GITHUB_TOKEN }}
       
     - name: Build dev image
@@ -21,14 +21,31 @@ jobs:
       working-directory: ./source
       run: docker push docker.pkg.github.com/celerik/best-web-firms-react/bwfr:latest
       
+    - name: Login via azure cli
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
+    - name: Deploy dev website
+      uses: azure/webapps-container-deploy@v1
+      with:
+        app-name: 'bestwebfirms-dev'
+        images: 'docker.pkg.github.com/celerik/best-web-firms-react/bwfr:latest'
+    
+    - name: Azure logout
+      run: |
+        az logout
+      
   deploy_prd:
+    if: true == contains(github.event.head_commit.message, '[release]')
+    needs: deploy_dev
     runs-on: ubuntu-latest
     
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
       
-    - name: Authenticate
+    - name: Github docker login
       run: docker login docker.pkg.github.com -u equisoide -p ${{ secrets.GITHUB_TOKEN }}
       
     - name: Build prd image
@@ -38,3 +55,18 @@ jobs:
     - name: Publish prd image
       working-directory: ./source
       run: docker push docker.pkg.github.com/celerik/best-web-firms-react/bwfr-prd:latest
+      
+    - name: Login via azure cli
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
+    - name: Deploy prd website
+      uses: azure/webapps-container-deploy@v1
+      with:
+        app-name: 'bestwebfirms-prd'
+        images: 'docker.pkg.github.com/celerik/best-web-firms-react/bwfr-prd:latest'
+    
+    - name: Azure logout
+      run: |
+        az logout
