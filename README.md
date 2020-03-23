@@ -11,7 +11,7 @@
 
 </div>
 
-## What's it
+# What's it
 
 This is a *Single Page Application* (SPA) built with [Create React App](https://github.com/facebook/create-react-app), [Redux](https://es.redux.js.org/) and [Material-UI](https://material-ui.com/).
 
@@ -32,7 +32,11 @@ The code is organized following an intuitive architecture and follows some of th
 - **Unit testing**: Including tests for Action Creators, Reducers and Utilities.
 - **Styles**: Supporting SASS, JSS and CSS.
 
-## Environment Setup
+# Deployment artifacts
+ - [Development Docker Image](https://github.com/celerik/best-web-firms-react/packages/159621): Published on merge to `master`.
+ - [Production Docker Image](https://github.com/celerik/best-web-firms-react/packages/159627): Published on merge to `master` with commit msg containing keyword `[release]`.
+
+# Environment Setup
 
 ### 1. Install Node.js
  - [Download](https://nodejs.org/es/download)
@@ -58,7 +62,7 @@ Extensions:
  - [NpmIntellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
  - [SortLines](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines)
 
-## Run Project
+# Run Project
 
  1. Install packages: `npm install`
  2. Build CSS files: `npm run build-css`
@@ -69,17 +73,17 @@ Extensions:
  7. Start project: `npm start`
  
  
-## Documentation
+# Documentation
 
  - Check out Component's documentation [here](https://github.com/celerik/best-web-firms-react/blob/gh-pages/README.md).
  
-## What's next
+# What's next
 
 Check out the road map of *best-web-firms-react* [here](ROADMAP.md).
 
-## License
+# License
 
 *best-web-firms* is licensed under the [MIT license](LICENSE).
 
-## How to Contribute
+# How to Contribute
 Check out the contributing guide [here](CONTRIBUTING.md).
