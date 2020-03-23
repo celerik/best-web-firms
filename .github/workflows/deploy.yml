@@ -50,7 +50,7 @@ jobs:
       working-directory: ./source
       run: docker push docker.pkg.github.com/celerik/best-web-firms-react/bwfr-prd:latest
       
-    - name: Deploy [rd image to azure site via webhooks
+    - name: Deploy prd image to azure site via webhooks
       uses: joelwmale/webhook-action@master
       env:
         WEBHOOK_URL: ${{ secrets.AZURE_DEPLOY_WEBHOOK_PRD_URL }}
