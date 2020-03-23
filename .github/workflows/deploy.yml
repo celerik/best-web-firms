@@ -20,6 +20,11 @@ jobs:
     - name: Publish dev image
       working-directory: ./source
       run: docker push docker.pkg.github.com/celerik/best-web-firms-react/bwfr:latest
+      
+    - name: Deploy dev image to azure site via webhooks
+      uses: wei/curl@v1
+      with:
+        args: -X POST ${{ secrets.AZURE_DEPLOY_WEBHOOK_DEV_URL }}
     
   deploy_prd:
     if: true == contains(github.event.head_commit.message, '[release]')
@@ -40,3 +45,8 @@ jobs:
     - name: Publish prd image
       working-directory: ./source
       run: docker push docker.pkg.github.com/celerik/best-web-firms-react/bwfr-prd:latest
+      
+    - name: Release prd image to azure site via webhooks
+      uses: wei/curl@v1
+      with:
+        args: -X POST ${{ secrets.AZURE_DEPLOY_WEBHOOK_PRD_URL }}
