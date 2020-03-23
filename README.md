@@ -33,8 +33,8 @@ The code is organized following an intuitive architecture and follows some of th
 - **Styles**: Supporting SASS, JSS and CSS.
 
 # Deployment artifacts
- - [Development Docker Image](https://github.com/celerik/best-web-firms-react/packages/159621): This image is published every time a Pull Request is merged to `master`.
- - [Production Docker Image](https://github.com/celerik/best-web-firms-react/packages/159627): This image is published every time a Pull Request is merged to `master`, and the head commit contains the keyword `[release]`.
+ - [Development Docker Image](https://github.com/celerik/best-web-firms-react/packages/159621): Published on merge to `master`.
+ - [Production Docker Image](https://github.com/celerik/best-web-firms-react/packages/159627): Published on merge to `master` with head commit message containing keyword `[release]`.
 
 # Environment Setup
 
