@@ -20,22 +20,7 @@ jobs:
     - name: Publish dev image
       working-directory: ./source
       run: docker push docker.pkg.github.com/celerik/best-web-firms-react/bwfr:latest
-      
-    - name: Login via azure cli
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-        
-    - name: Deploy dev website
-      uses: azure/webapps-container-deploy@v1
-      with:
-        app-name: 'bestwebfirms-dev'
-        images: 'docker.pkg.github.com/celerik/best-web-firms-react/bwfr:latest'
     
-    - name: Azure logout
-      run: |
-        az logout
-      
   deploy_prd:
     if: true == contains(github.event.head_commit.message, '[release]')
     needs: deploy_dev
@@ -55,18 +40,3 @@ jobs:
     - name: Publish prd image
       working-directory: ./source
       run: docker push docker.pkg.github.com/celerik/best-web-firms-react/bwfr-prd:latest
-      
-    - name: Login via azure cli
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-        
-    - name: Deploy prd website
-      uses: azure/webapps-container-deploy@v1
-      with:
-        app-name: 'bestwebfirms-prd'
-        images: 'docker.pkg.github.com/celerik/best-web-firms-react/bwfr-prd:latest'
-    
-    - name: Azure logout
-      run: |
-        az logout
