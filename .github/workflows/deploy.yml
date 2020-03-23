@@ -20,3 +20,21 @@ jobs:
     - name: Publish dev image
       working-directory: ./source
       run: docker push docker.pkg.github.com/celerik/best-web-firms-react/bwfr:latest
+      
+  deploy_prd:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Authenticate
+      run: docker login docker.pkg.github.com -u equisoide -p ${{ secrets.GITHUB_TOKEN }}
+      
+    - name: Build prd image
+      working-directory: ./source
+      run: docker build -t docker.pkg.github.com/celerik/best-web-firms-react/bwfr-prd:latest . -f prd.Dockerfile
+      
+    - name: Publish prd image
+      working-directory: ./source
+      run: docker push docker.pkg.github.com/celerik/best-web-firms-react/bwfr-prd:latest
