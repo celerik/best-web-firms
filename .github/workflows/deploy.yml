@@ -17,6 +17,6 @@ jobs:
       working-directory: ./source
       run: docker build -t docker.pkg.github.com/celerik/best-web-firms-react/bwfr:latest . -f dev.Dockerfile
       
-    - name: Tag dev image
+    - name: Publish dev image
       working-directory: ./source
-      run: docker tag bwfr docker.pkg.github.com/celerik/best-web-firms-react/bwfr:latest
+      run: docker push docker.pkg.github.com/celerik/best-web-firms-react/bwfr:latest
