@@ -11,8 +11,20 @@
 
 </div>
 
+# Deployed Sites
+
 - Go to [Development Site](https://bestwebfirms-dev.azurewebsites.net)
 - Go to [Production Site](https://bestwebfirms-prd.azurewebsites.net)
+
+# Deployed Artifacts
+ - [Development Docker Image](https://github.com/celerik/best-web-firms-react/packages/159621): Published on each merge to `master`.
+ - [Production Docker Image](https://github.com/celerik/best-web-firms-react/packages/159627): Published on each merge to `master` with commit msg containing keyword `[release]`.
+
+# CI/CD Pipeline
+
+<div align="center">
+    <img src="images/pipeline.jpg" alt="CI/CD Pipeline" width="916" />
+</div>
 
 # What's it
 
@@ -34,10 +46,6 @@ The code is organized following an intuitive architecture and follows some of th
 - **Linters**: Including CSS and Javascript
 - **Unit testing**: Including tests for Action Creators, Reducers and Utilities.
 - **Styles**: Supporting SASS, JSS and CSS.
-
-# Deployment artifacts
- - [Development Docker Image](https://github.com/celerik/best-web-firms-react/packages/159621): Published on each merge to `master`.
- - [Production Docker Image](https://github.com/celerik/best-web-firms-react/packages/159627): Published on each merge to `master` with commit msg containing keyword `[release]`.
 
 # Environment Setup
 
