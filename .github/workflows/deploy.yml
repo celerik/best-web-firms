@@ -15,4 +15,4 @@ jobs:
       
     - name: Build dev image
       working-directory: ./source
-      run: docker build -t docker.pkg.github.com/celerik/best-web-firms-react/bwfr:latest dev.Dockerfile
+      run: docker build -t docker.pkg.github.com/celerik/best-web-firms-react/bwfr:latest . -f dev.Dockerfile
