@@ -11,6 +11,9 @@
 
 </div>
 
+- Go to [Development Site](https://bestwebfirms-dev.azurewebsites.net)
+- Go to [Production Site](https://bestwebfirms-prd.azurewebsites.net)
+
 # What's it
 
 This is a *Single Page Application* (SPA) built with [Create React App](https://github.com/facebook/create-react-app), [Redux](https://es.redux.js.org/) and [Material-UI](https://material-ui.com/).
@@ -33,8 +36,8 @@ The code is organized following an intuitive architecture and follows some of th
 - **Styles**: Supporting SASS, JSS and CSS.
 
 # Deployment artifacts
- - [Development Docker Image](https://github.com/celerik/best-web-firms-react/packages/159621): Published on merge to `master`.
- - [Production Docker Image](https://github.com/celerik/best-web-firms-react/packages/159627): Published on merge to `master` with commit msg containing keyword `[release]`.
+ - [Development Docker Image](https://github.com/celerik/best-web-firms-react/packages/159621): Published on each merge to `master`.
+ - [Production Docker Image](https://github.com/celerik/best-web-firms-react/packages/159627): Published on each merge to `master` with commit msg containing keyword `[release]`.
 
 # Environment Setup
 
