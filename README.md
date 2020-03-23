@@ -19,6 +19,9 @@
 # Deployed Artifacts
  - [Development Docker Image](https://github.com/celerik/best-web-firms-react/packages/159621): Published on each merge to `master`.
  - [Production Docker Image](https://github.com/celerik/best-web-firms-react/packages/159627): Published on each merge to `master` with commit msg containing keyword `[release]`.
+ 
+ # Unit Testing Coverage report
+Go to [Coveralls.io](https://coveralls.io/github/celerik/best-web-firms-react?branch=master)
 
 # CI/CD Pipeline
 
