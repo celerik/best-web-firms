@@ -5,6 +5,7 @@
 # Best Web Firms
 
 ![build](https://github.com/celerik/best-web-firms-react/workflows/build/badge.svg)
+![deploy](https://github.com/celerik/best-web-firms-react/workflows/deploy/badge.svg)
 ![documentation](https://github.com/celerik/best-web-firms-react/workflows/documentation/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/celerik/best-web-firms-react/badge.svg?branch=master)](https://coveralls.io/github/celerik/best-web-firms-react?branch=master)
 
