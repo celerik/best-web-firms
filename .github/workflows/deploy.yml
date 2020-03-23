@@ -9,21 +9,10 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Deploy dev image to github registry
-      uses: HurricanKai/Publish-Docker-Github-Action@master
-      with:
-        name: dev/best-web-firms-react
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        registry: docker.pkg.github.com
-        dockerfile: source/dev.Dockerfile
-        
-    - name: Deploy prd image to github registry
-      uses: HurricanKai/Publish-Docker-Github-Action@master
-      with:
-        name: dev/best-web-firms-react
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        registry: docker.pkg.github.com
-        dockerfile: source/prd.Dockerfile
+      
+    - name: Authenticate
+      run: cat ~/GH_TOKEN.txt | docker login docker.pkg.github.com -u equisoide --password-stdin
+      
+    - name: Build dev image
+      working-directory: ./source
+      run: docker build -t docker.pkg.github.com/celerik/best-web-firms-react/bwfr:latest dev.Dockerfile
