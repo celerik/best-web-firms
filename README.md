@@ -34,7 +34,7 @@ The code is organized following an intuitive architecture and follows some of th
 
 # Deployment artifacts
  - [Development Docker Image](https://github.com/celerik/best-web-firms-react/packages/159621): Published on merge to `master`.
- - [Production Docker Image](https://github.com/celerik/best-web-firms-react/packages/159627): Published on merge to `master` with head commit message containing keyword `[release]`.
+ - [Production Docker Image](https://github.com/celerik/best-web-firms-react/packages/159627): Published on merge to `master` with commit msg containing keyword `[release]`.
 
 # Environment Setup
 
