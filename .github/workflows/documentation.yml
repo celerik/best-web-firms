@@ -30,4 +30,4 @@ jobs:
       uses: maxheld83/ghpages@master
       env:
         BUILD_DIR: source
-        GH_PAT: ${{ secrets.GH_PAT }}
+        GH_PAT: ${{ secrets.DEPLOY_DOCUMENTATION_PERSONAL_ACCESS_TOKEN }}
